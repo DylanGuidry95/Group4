@@ -13,9 +13,13 @@ public class RampMovement : MonoBehaviour
     public float rotate;
     public float delay;
 
+    public GameObject obstacle;
+
 	// Use this for initialization
-	void Start () {
-        delay = Random.Range(10, 30);
+	void Start () 
+    {
+        delay = Random.Range(5, 15);
+        obstacle.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -25,6 +29,7 @@ public class RampMovement : MonoBehaviour
 
         if (Timer > delay && isActive == true)
         {
+            obstacle.SetActive(false);
             transform.Translate(Vector3.up * Time.deltaTime * speed);
             currentHeight -= Time.deltaTime * speed;
             print("Going Up");
@@ -38,6 +43,7 @@ public class RampMovement : MonoBehaviour
 
         if (Timer > delay && isActive == false)
         {
+            obstacle.SetActive(true);
             transform.Translate((Vector3.up * Time.deltaTime * speed) * -1);
             currentHeight += Time.deltaTime * speed;
             print("Going Down");
