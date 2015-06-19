@@ -998,7 +998,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: main
+          m_StringArgument: arena
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1075,7 +1075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Player Health
 --- !u!114 &11414606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1830,7 +1830,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Goal health
 --- !u!114 &11492138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2499,8 +2499,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: .25}
   m_AnchorMax: {x: .906669378, y: .75}
-  m_AnchoredPosition: {x: 9.52198601, y: 0}
-  m_SizeDelta: {x: 8.94400024, y: 0}
+  m_AnchoredPosition: {x: 12.1610003, y: 0}
+  m_SizeDelta: {x: 14.2209997, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22465254
 RectTransform:
