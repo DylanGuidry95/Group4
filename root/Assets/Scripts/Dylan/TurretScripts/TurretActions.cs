@@ -23,7 +23,7 @@ public class TurretActions : MonoBehaviour, TActions
 
     public void t_State(TurretState state)
     {
-        t_fsm.t_ChangeState(state);
+        t_fsm.ChangeState(state);
     }
 
     void t_DistanceToTarget()

@@ -15,7 +15,8 @@ public class FixExit : MonoBehaviour {
         AudioManager.instance.PlayAudio(GameOver);
 
         print("fix exit");
-	
+        //GameManager.instance.Pause(GameManager.PauseState.Full);
+
 	}
 	
 }

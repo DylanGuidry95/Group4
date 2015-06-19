@@ -4,21 +4,21 @@ using System.Collections.Generic;
 
 public class TurretFSM
 {
-    bool t_IsReloading;
+    bool isReloading;
 
     public Dictionary<string, bool> TurretActions;
 
     public TurretFSM()
     {
-        t_IsReloading = false;
+        isReloading = false;
 
         TurretActions = new Dictionary<string, bool>();
-        TurretActions.Add("Reload", t_IsReloading);
+        TurretActions.Add("Reload", isReloading);
     }
 
-    private void t_HandleTransition(TurretState state)
+    private void HandleTransition(TurretState state)
     {
-        foreach (string Key in new List<string>(TurretActions.Keys))
+        foreach(string Key in new List<string>(TurretActions.Keys))
         {
             switch (state)
             {
@@ -40,30 +40,30 @@ public class TurretFSM
 
     protected static TurretFSM _fsm;
 
-    private bool t_CheckTransition(TurretState from, TurretState to)
+    private bool checkTransition(TurretState from, TurretState to)
     {
-        switch (from)
+        switch(from)
         {
             case TurretState.idle:
                 if (to == TurretState.patrol || to == TurretState.patrol)
                 {
-                    t_cState = to;
+                    cState = to;
                     return true;
                 }
                 break;
-
+                
             case TurretState.patrol:
                 if (to == TurretState.shoot || to == TurretState.patrol || to == TurretState.idle)
                 {
-                    t_cState = to;
+                    cState = to;
                     return true;
                 }
                 break;
 
             case TurretState.shoot:
-                if (to == TurretState.destroyed || to == TurretState.patrol)
+                if(to == TurretState.destroyed || to == TurretState.patrol)
                 {
-                    t_cState = to;
+                    cState = to;
                     return true;
                 }
                 break;
@@ -74,18 +74,23 @@ public class TurretFSM
         return false;
     }
 
-    public void t_ChangeState(TurretState to)
+    public void ChangeState(TurretState to)
     {
-        t_CheckTransition(t_cState, to);
+        checkTransition(cState, to);
     }
 
-    private TurretState t_cState = TurretState.idle;
+    private TurretState cState = TurretState.idle;
 
-    public TurretState t_CurrentState
+    public TurretState CurrentState
     {
         get
         {
-            return t_cState;
+            return cState;
         }
+    }
+
+    internal void t_ChangeState(TurretState state)
+    {
+        throw new System.NotImplementedException();
     }
 }

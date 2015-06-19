@@ -22,6 +22,6 @@ public class GoalStats : Stats
     void Destroy()
     {
         Destroy(gameObject);
-        GetComponent<LevelLoader>().loadLevel("Exit");
+       LevelLoader.instance.loadLevel("Exit");
     }
 }

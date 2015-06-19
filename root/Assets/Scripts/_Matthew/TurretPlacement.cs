@@ -55,35 +55,35 @@ public class TurretPlacement : Singleton<TurretPlacement>
         if (a == KeyCode.Alpha1) 
             // Player will press #1 - 4 keys to select which type of turret they would like to choose.  
         {
-
             // The turret placement will be placed in front of the player by 1 unit.
             turret = turret1;
             turretCost = 10;
             isSelected = true;
+            HUDManager.instance.ChosenTurHUD(1);
         }
 
         if (a == KeyCode.Alpha2)
-        {
-            
+        {   
             turret = turret2;
             turretCost = 20;
             isSelected = true;
+            HUDManager.instance.ChosenTurHUD(2);
         }
 
         if (a == KeyCode.Alpha3)
         {
-            
             turret = turret3;
             turretCost = 30;
             isSelected = true;
+            HUDManager.instance.ChosenTurHUD(3);
         }
 
         if (a == KeyCode.Alpha4)
         {
-           
             turret = turret4;
             turretCost = 40;
             isSelected = true;
+            HUDManager.instance.ChosenTurHUD(4);
         }
     }
 }
