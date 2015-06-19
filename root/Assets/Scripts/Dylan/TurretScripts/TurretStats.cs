@@ -10,7 +10,7 @@ public class TurretStats : Stats
         e_ShotGun,
     }
 
-    public float rotationSpeed = 5.0f;
+    public float rotationSpeed = 5.1f;
 
     public int damage = 5;
 
@@ -23,8 +23,8 @@ public class TurretStats : Stats
 
     public Quaternion rotationToGoal;
     public int t_cycle;
-    public float t_RateOfFire;
-    public float t_ReloadTime;
+    public float t_RateOfFire = 10.1f;
+    public float t_ReloadTime = 1.1f;
 
     public e_TurretType type;
 
@@ -51,7 +51,7 @@ public class TurretStats : Stats
         m_Health = m_MaxHealth;
         if (type == e_TurretType.e_MachineGun)
         {
-            m_maxAmmo = 30;
+            m_maxAmmo = 100;
             t_RateOfFire = Time.deltaTime * .25f;
             t_ReloadTime = Time.deltaTime * 5.0f;
         }
@@ -66,9 +66,9 @@ public class TurretStats : Stats
 
         if (type == e_TurretType.e_ShotGun)
         {
-            m_maxAmmo = 5;
+            m_maxAmmo = 100;
             t_RateOfFire = Time.deltaTime *  .1f;
-            t_ReloadTime = Time.deltaTime * 8.0f;
+            t_ReloadTime = Time.deltaTime * 1.0f;
         }
         m_Ammo = m_maxAmmo;
 

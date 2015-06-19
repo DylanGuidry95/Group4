@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 424534}
   - 135: {fileID: 13545868}
-  - 114: {fileID: 11465936}
+  - 114: {fileID: 11414774}
   m_Layer: 0
   m_Name: shotGun Shell
   m_TagString: ShotGunShell
@@ -29,7 +29,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11465936
+--- !u!114 &11414774
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,12 +37,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 114698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0520cc8d5fd34498160da05d44f89b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ad1b400d0cd5674a912c82d5d29c033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  damgaeOutput: 0
+  enemy: {fileID: 169020, guid: 57c806e5fb8b40143a37e27bab03b554, type: 2}
+  throwPower: 25
   bDamage: 10
-  isFired: 0
+  BB: []
+  numOfShots: 10
+  isFired: 1
   doDmg: 0
 --- !u!135 &13545868
 SphereCollider:
@@ -51,10 +55,10 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114698}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .349999994
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

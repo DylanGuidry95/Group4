@@ -32,7 +32,7 @@ public class PlayerActions : MonoBehaviour, IActions
         if (fsm.ActionDict["shoot"] == true)
             action = "shoot";
 
-        Grenade.GetComponent<BulletMove>().isFired = true;       
+        Grenade.GetComponent<ProjectileFSM>().isFired = true;       
         Instantiate(Grenade, transform.position, transform.rotation);
     }
 

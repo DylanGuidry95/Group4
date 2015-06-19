@@ -27,7 +27,7 @@ public class InputHandler : MonoBehaviour
     public KeyCode tTurret2 = KeyCode.Alpha2;
     public KeyCode tTurret3 = KeyCode.Alpha3;
     public KeyCode tTurret4 = KeyCode.Alpha4;
-    public KeyCode place = KeyCode.Mouse1;
+    public KeyCode place = KeyCode.Mouse0;
 
     //player movement controls
     public KeyCode walkForward = KeyCode.W;
@@ -65,7 +65,7 @@ public class InputHandler : MonoBehaviour
         turretManager = GameObject.FindGameObjectWithTag("TurretManager");
         turret = GameObject.FindGameObjectWithTag("MG");
         Enemy = GameObject.FindGameObjectWithTag("Enemy");
-        turretManager = GameObject.FindGameObjectWithTag("TurretManager");
+
         //Game State changes
         if (Input.GetKeyDown(halfPause))
         {
@@ -152,6 +152,11 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(tTurret4))
         {
             turretManager.GetComponent<TurretPlacement>().TurretSelect(tTurret4);
+        }
+
+        if (Input.GetKeyUp(place))
+        {
+            turretManager.GetComponent<TurretPlacement>().TurretWasPlaced();
         }
 
         if (Input.GetKeyDown(place))
