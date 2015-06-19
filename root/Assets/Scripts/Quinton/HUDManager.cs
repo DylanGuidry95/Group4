@@ -102,7 +102,7 @@ public class HUDManager : Singleton<HUDManager>
 
         coinHp.GetComponent<Text>().text = curString + '/' + maxString;
         if (hpBar)
-            helthBar(curHp, maxHp);
+            CoinhelthBar(curHp, maxHp);
     }
     public void CoinHpHUD(float curHp, float maxHp)
     {
@@ -123,7 +123,7 @@ public class HUDManager : Singleton<HUDManager>
 
         coinHp.GetComponent<Text>().text = curString + '/' + maxString;
         if (hpBar)
-            helthBar(curHp, maxHp);
+            CoinhelthBar(curHp, maxHp);
 
     }
 
@@ -132,7 +132,7 @@ public class HUDManager : Singleton<HUDManager>
         CoinhealthBar.GetComponent<Slider>().maxValue = maxHp;
         CoinhealthBar.GetComponent<Slider>().value = curHP;
     }
-    private void COinhelthBar(int curHP, int maxHp)
+    private void CoinhelthBar(int curHP, int maxHp)
     {
         CoinhealthBar.GetComponent<Slider>().maxValue = maxHp;
         CoinhealthBar.GetComponent<Slider>().value = curHP;

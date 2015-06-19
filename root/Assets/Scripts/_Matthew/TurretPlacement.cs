@@ -45,8 +45,6 @@ public class TurretPlacement : Singleton<TurretPlacement>
             Instantiate(turret, pos, transform.rotation);
             isSelected = false;
             turretPlaced = turretPlaced + 1;
-            
-
         }
     }
 
