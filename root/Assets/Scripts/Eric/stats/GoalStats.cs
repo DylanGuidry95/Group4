@@ -15,13 +15,13 @@ public class GoalStats : Stats
 
         if (m_Health <= 0)
         {
-            Destroy();
+            LevelLoader.instance.loadLevel("exit");
         }
     }
 
-    void Destroy()
+    void destroy()
     {
-        Destroy(gameObject);
-        GetComponent<LevelLoader>().loadLevel("Exit");
+        print("test hit");
+        GameManager.instance.Transition("exit");
     }
 }

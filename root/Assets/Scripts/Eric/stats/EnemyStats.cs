@@ -73,6 +73,7 @@ public class EnemyStats : Stats
         int i = Random.Range(3, 6);
         Vector3 DropPos = gameObject.transform.position;
         c_EState = EnemyState.Dead;
+        gameObject.GetComponentInChildren<EnemyAttack>().damage = 0;
 
         for (int j = 1; j <= i; j++)
         {

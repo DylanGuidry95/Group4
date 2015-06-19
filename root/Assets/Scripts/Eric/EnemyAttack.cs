@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyAttack : MonoBehaviour
 {
-    private float damage = 10;
+    public float damage = 10;
 
     void OnTriggerStay (Collider other)
     {

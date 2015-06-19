@@ -4,11 +4,14 @@ using System.Collections;
 public class TurretPlacement : Singleton<TurretPlacement> 
 {
     public GameObject turret1, turret2, turret3, turret4;
-    public GameObject dot;
+    private GameObject dot;
+    public GameObject dotMg;
+    public GameObject dotAA;
+    public GameObject dotSG;
+    public GameObject dotST;
     private GameObject turret;
 
     private int turretPlaced = 0;
-
     private int turretCost = 0;
     public bool isSelected = false; //checks to see if a turret is selected
 
@@ -17,66 +20,83 @@ public class TurretPlacement : Singleton<TurretPlacement>
 	// Use this for initialization
 	void Start () 
     {
-       dot.gameObject.SetActive(false);
-	}
+        if(!isSelected)
+        {
+            dot.gameObject.SetActive(false);
+        }
+
+        dot = dotMg;
+        turret = turret1;
+    }
 	
 	// Update is called once per frame
-    void Update()
-    {
-        //TurretSelect();
-        //TurretPlace();
-        //calls in the functions for selecting a turret and placing the turrets
+    void Update() { HUDManager.instance.TurHUD(turretPlaced);}
 
-        HUDManager.instance.TurHUD(turretPlaced);
-    }
-
-     public void TurretPlacePoint()
+    public void TurretWasPlaced()
     {
         Vector3 pos = transform.position + Camera.main.transform.forward * 3;
         pos.y = 0;
-        //Sets the spawn position that the turret will be placed at
 
-        //dot.gameObject.SetActive(true);
-        
+        dot.gameObject.SetActive(false);
+        Instantiate(turret, pos, transform.rotation);
+        isSelected = true;
 
-        if (isSelected == true)
+        FindObjectOfType<ItemDatabase>().scraps -= turretCost;
+    }
+
+    public void TurretPlacePoint()
+    {
+            //Vector3 pos = transform.position + Camera.main.transform.forward * 3;
+            //pos.y = 0;
+
+
+        if (isSelected == true && FindObjectOfType<ItemDatabase>().scraps >= turretCost)
         {
             dot.gameObject.SetActive(true);
-            Instantiate(turret, pos, transform.rotation);
+            TurretWasPlaced();
             isSelected = false;
-            turretPlaced = turretPlaced + 1;
         }
+
+        ////////////////////////////////
+
+        //if (isSelected == true)
+        //{
+        //    dot.gameObject.SetActive(true);
+        //    Instantiate(turret, pos, transform.rotation);
+        //    isSelected = false;
+        //    turretPlaced = turretPlaced + 1;
+        //}
     }
 
     public void TurretSelect(KeyCode a)
     {
-        if (a == KeyCode.Alpha1) 
+        if (a == KeyCode.Alpha1) // MG Turret
             // Player will press #1 - 4 keys to select which type of turret they would like to choose.  
         {
-
+            dot = dotMg;
             // The turret placement will be placed in front of the player by 1 unit.
             turret = turret1;
             turretCost = 10;
             isSelected = true;
         }
 
-        if (a == KeyCode.Alpha2)
+        if (a == KeyCode.Alpha2) // AA Turret
         {
-            
+            dot = dotAA;   
             turret = turret2;
             turretCost = 20;
             isSelected = true;
         }
 
-        if (a == KeyCode.Alpha3)
+        if (a == KeyCode.Alpha3) // Shotgun Turret
         {
-            
+            dot = dotSG;
             turret = turret3;
             turretCost = 30;
             isSelected = true;
         }
 
-        if (a == KeyCode.Alpha4)
+        if (a == KeyCode.Alpha4) // Spike Trap
         {
            
             turret = turret4;

@@ -6,7 +6,7 @@ public class ProjectileFSM : MonoBehaviour
     public int damgaeOutput;
     public GameObject enemy;
     public float throwPower = 25.1f;
-    private float mySpeed = 10.1f;
+    private float mySpeed = 1.1f;
     private float maxDistance = 5.1f;
     private float myDist;
     public int bDamage = 10;
@@ -36,8 +36,6 @@ public class ProjectileFSM : MonoBehaviour
             {
                 C.GetComponent<Stats>().m_Health -= damgaeOutput;
                 Destroy(gameObject);
-
-
             }
         }
     }
