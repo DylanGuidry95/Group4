@@ -29,13 +29,13 @@ public class RampMovement : MonoBehaviour
 
         if (Timer > delay && isActive == true)
         {
+            obstacle.SetActive(false);
             transform.Translate(Vector3.up * Time.deltaTime * speed);
             currentHeight -= Time.deltaTime * speed;
             print("Going Up");
 
             if (currentHeight <= 0)
             {
-                obstacle.SetActive(false);
                 isActive = false;
                 Timer = 0;
             }
