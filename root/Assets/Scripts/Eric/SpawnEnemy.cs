@@ -11,7 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     public float  SpawnDelay;
     public bool canSpawn;
 
-    int enemyCount = 0;
+    public int enemyCount = 0;
 
     void Start()
     {
@@ -28,6 +28,7 @@ public class SpawnEnemy : MonoBehaviour
             m_Timer = 0;
             int pos = Random.Range(0, spawnPoints.Length);
             Instantiate(enemy, spawnPoints[pos].position, transform.rotation);
+            enemyCount += 1;
         }
 	}
 }

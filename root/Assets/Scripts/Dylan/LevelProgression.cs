@@ -4,7 +4,7 @@ using System.Collections;
 public class LevelProgression : MonoBehaviour 
 {
     public GameObject gameManager;
-    public GameObject enemy;
+
     public int numOfWaves = 5;
     public int curWave = 1;
 
@@ -12,7 +12,14 @@ public class LevelProgression : MonoBehaviour
     public int numOfKills = 0;
     public int numOfEnemies = 10; //the number of enemies in the round
 
-    float delayProgress = Time.deltaTime * 25;
+    float delayProgress;
+    bool dontAdd = false;
+
+    void Start()
+    {
+        HUDManager.instance.LogUp("Wave " + curWave.ToString() + " / " + numOfWaves.ToString());
+        HUDManager.instance.LogUp("Enemies Killed " + numOfKills.ToString() + " / " + goalKillCount.ToString());
+    }
 
     private void progress()
     {
@@ -20,15 +27,27 @@ public class LevelProgression : MonoBehaviour
         goalKillCount = 10 * curWave;
         numOfEnemies = numOfEnemies * curWave;
         numOfKills = 0;
+        textOutput();
     }
 
+    void textOutput()
+    {
+        HUDManager.instance.LogUp("Wave " + curWave.ToString() + " / " + numOfWaves.ToString());
+    }
 
     void Update()
     {
-        if(enemy.GetComponent<EnemyStats>().c_EState == EnemyState.Dead)
-        {
-            numOfKills = numOfKills + 1;
-        }
+
+        EnemyStats[] es = GameObject.FindObjectsOfType<EnemyStats>();
+        //enemy = GameObject.FindObjectsOfType<EnemyStats>();
+
+        foreach(EnemyStats e in es)
+            if (e.c_EState == EnemyState.Dead && e.counted == false)
+            {
+                numOfKills = numOfKills + 1;
+                e.counted = true;
+                HUDManager.instance.LogUp("Enemies Killed " + numOfKills.ToString() + " / " + goalKillCount.ToString());
+            }
 
         if (numOfKills >= goalKillCount && curWave != numOfWaves)
         {

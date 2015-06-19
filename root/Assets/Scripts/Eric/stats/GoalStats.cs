@@ -11,6 +11,8 @@ public class GoalStats : Stats
 
     void Update()
     {
+        FindObjectOfType<HUDManager>().CoinHpHUD(m_Health, m_MaxHealth);
+
         if (m_Health <= 0)
         {
             Destroy();
