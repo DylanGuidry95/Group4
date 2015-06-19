@@ -5,11 +5,6 @@ using System.Collections.Generic;
 public class LevelLoader : Singleton<LevelLoader> 
 {
     public List<GameObject> persistant;
-    [SerializeField]
-    private string lastLevel;
-    [SerializeField]
-    private string currentLevel;
-
     void Start()
     {
         lastLevel = "Intro";
@@ -25,6 +20,19 @@ public class LevelLoader : Singleton<LevelLoader>
         persistant.Remove(o);
     }
 
+    void loadLevel(string nextLevel, LevelState state)
+    {
+        currentLevel = nextLevel;
+        lastLevel = Application.loadedLevelName;
+        Application.LoadLevel(nextLevel);
+        // Carring over persistant Objects
+        DontDestroyOnLoad(gameObject);
+        for (int i =0; i < persistant.Count; i++)
+        {
+            DontDestroyOnLoad(persistant[i]);
+        }          
+    }
+
     public void loadLevel(string lvl)
     {
         if (lvl == "quit" || lvl == "Quit")
@@ -32,36 +40,18 @@ public class LevelLoader : Singleton<LevelLoader>
             print("quit it ");
             Application.Quit();
         }
-
-        if(lvl == "last" || lvl == "Last")
-        {
-            print("loading " + lvl);
-            currentLevel = lvl;
-            lastLevel = Application.loadedLevelName;
-            Application.LoadLevel(lvl);
-            // Carring over persistant Objects
-            DontDestroyOnLoad(gameObject);
-            for (int i = 0; i < persistant.Count; i++)
-            {
-                DontDestroyOnLoad(persistant[i]);
-            }
-        }
-
         else
         {
             print("loading " + lvl);
-            currentLevel = lvl;
-            lastLevel = Application.loadedLevelName;
             Application.LoadLevel(lvl);
-            // Carring over persistant Objects
-            DontDestroyOnLoad(gameObject);
-            for (int i = 0; i < persistant.Count; i++)
-            {
-                DontDestroyOnLoad(persistant[i]);
-            }
         }
         
     }
+        // User can just pass in Quit to th level loader to quit out of the application 
+    //public void ExitGame()
+    //{
+    //    Application.Quit();
+    //}
 
 
     Stack<string> lvlStack = new Stack<string>();
@@ -73,7 +63,7 @@ void OnLevelWasLoaded(int lvl)
     lvlStack.Push(currentLevel);
 }
 */
-  
+    [SerializeField]
+    private string lastLevel;
+    public  string currentLevel;
 }
-
-

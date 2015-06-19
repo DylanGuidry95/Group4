@@ -11,6 +11,7 @@ public class EnemyStats : Stats
     public bool validTarget = false;
 
     public EnemyState c_EState;
+    public bool counted;
 
     public float dieTimer, dieDelay;
 
@@ -20,6 +21,7 @@ public class EnemyStats : Stats
         isShootable = true;
         m_Health = m_MaxHealth;
         m_PowerLevel = false;
+        counted = false;
 
         transform.localScale *= Random.Range(1f, 2f);
     }

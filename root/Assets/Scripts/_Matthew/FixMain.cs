@@ -11,7 +11,6 @@ public class FixMain : MonoBehaviour {
         HUDManager.instance.SetState("panel",  true);
         HUDManager.instance.SetState("menu",   false);
         HUDManager.instance.SetState("finish", false);
-        //GameManager.instance.Pause(GameManager.PauseState.None);
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 

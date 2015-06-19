@@ -45,11 +45,3 @@ public enum GameStates
     gameOver,
     close,
 }
-
-// Pause State rate     : <Enum>
-public enum PauseState
-{
-    Full,       // Update Halted
-    Half,       // Update at half speed
-    None,       // Update rate not effected
-}

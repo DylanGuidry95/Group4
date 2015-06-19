@@ -70,14 +70,14 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(halfPause))
         {
             /// Pause State Half (Update at Half speed)
-            GameManager.instance.Pause(PauseState.Half);
+            GameManager.instance.Pause(GameManager.PauseState.Half);
         }
 
         if (Input.GetKeyDown(pause))
         {
             if (!paused)
             {
-                GameManager.instance.Pause(PauseState.Full);
+                GameManager.instance.Pause(GameManager.PauseState.Full);
                 print("pausing");
                 paused = !paused;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
@@ -85,7 +85,7 @@ public class InputHandler : MonoBehaviour
             }
             else
             {
-                GameManager.instance.Pause(PauseState.None);
+                GameManager.instance.Pause(GameManager.PauseState.None);
                 print("unpause");
                 paused = !paused;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
