@@ -189,7 +189,6 @@ Transform:
   m_Father: {fileID: 1508045280}
   m_RootOrder: 1
 <<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
-<<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &129371927
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,8 +232,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
-=======
->>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 =======
 >>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &166330791
@@ -575,11 +572,7 @@ Prefab:
     - target: {fileID: 470570, guid: 50eda0bc77a818b48ad9e3708e7980b6, type: 2}
       propertyPath: m_RootOrder
 <<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
-<<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
       value: 8
-=======
-      value: 7
->>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 =======
       value: 7
 >>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
@@ -936,7 +929,6 @@ MeshFilter:
   m_GameObject: {fileID: 643998020}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
-<<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &679328203
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,8 +972,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
-=======
->>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 =======
 >>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &733120679
@@ -1382,7 +1372,6 @@ MeshFilter:
   m_GameObject: {fileID: 945007827}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
-<<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &1085205179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,8 +1415,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
-=======
->>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 =======
 >>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &1125937317
@@ -1939,11 +1926,7 @@ Prefab:
     - target: {fileID: 410014, guid: 09b96d4127b41ac4482ac268d81db4c0, type: 2}
       propertyPath: m_RootOrder
 <<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
-<<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
       value: 9
-=======
-      value: 8
->>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 =======
       value: 8
 >>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
@@ -2406,7 +2389,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
 <<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
-<<<<<<< HEAD:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &1666142727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,8 +2436,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 440638, guid: 09b96d4127b41ac4482ac268d81db4c0, type: 2}
   m_PrefabInternal: {fileID: 1416411849}
-=======
->>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 =======
 >>>>>>> parent of 0cea5f7... converging into one:root/Assets/Scenes/Eric/Arena.unity
 --- !u!1 &1782125350
