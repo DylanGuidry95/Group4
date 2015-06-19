@@ -39,10 +39,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689c67a9205690a43ab13937ae5439c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
-  Shooting: {fileID: 0}
-  Slapping: {fileID: 0}
-  TurrentPlace: {fileID: 0}
   halfPause: 99
   pause: 120
   unpause: 122
